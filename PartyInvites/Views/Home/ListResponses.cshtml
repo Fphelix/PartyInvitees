@@ -1,0 +1,45 @@
+﻿@model List<GuestResponse>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title> Responses </title>
+</head>
+
+<body>
+    <h2> Here is the list of people attending the party </h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th> Name </th>
+                <th> Email </th>
+                <th> Phone </th>
+            </tr>
+        </thead>
+        <tbody>
+
+
+            @*foreach( PartyInvites.Models.GestResponse response in Model)*@
+            @for (int i = 0; i < Model.Count; i++)
+            {
+                @*//  if (Model[i].WillAttend == true)*@
+                <tr>
+                    <td> @Model[i].Name </td>
+                    <td> @Model[i].Email </td>
+                    <td> @Model[i].Phone </td>
+                    <td> @Model[i].WillAttend</td>
+                </tr>
+
+
+            }
+        </tbody>
+    </table>
+</body>
+</html>
